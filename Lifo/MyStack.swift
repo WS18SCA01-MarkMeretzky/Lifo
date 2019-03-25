@@ -18,15 +18,7 @@ struct MyStackOfStrings {
         return items.count;
     }
     
-    // Item 0 is the first one pushed.
-    // Item count - 1 is the most recently pushed.
-    
-    func get(_ i: Int) -> String {
-        guard (0 ..< count).contains(i) else {
-            fatalError("can't get item \(i) of \(count)");
-        }
-        return items[i];
-    }
+
     
     // MARK: - Mutating methods
     
@@ -43,6 +35,18 @@ struct MyStackOfStrings {
     }
 }
 
+extension MyStackOfStrings {   //to make it easy to display the MyStackOfInts in a UITableView
+    // Item 0 is the first one pushed.
+    // Item count - 1 is the most recently pushed.
+    
+    func get(_ i: Int) -> String {
+        guard (0 ..< count).contains(i) else {
+            fatalError("can't get item \(i) of \(count)");
+        }
+        return items[i];
+    }
+}
+
 
 /*
 //Version 2: a struct hardwired to store and retrieve Ints.
@@ -54,17 +58,7 @@ struct MyStackOfInts {
     var count: Int {   //computed property
         return items.count;
     }
-    
-    // Item 0 is the first one pushed.
-    // Item count - 1 is the most recently pushed.
-    
-    func get(_ i: Int) -> Int {
-        guard (0 ..< count).contains(i) else {
-            fatalError("can't get item \(i) of \(count)");
-        }
-        return items[i];
-    }
-    
+
     // MARK: - Mutating methods
     
     mutating func push(_ item: Int) {
@@ -76,6 +70,18 @@ struct MyStackOfInts {
             fatalError("can't take blood from a stone");
         }
         return items.removeLast();
+    }
+}
+
+extension MyStackOfInts {   //to make it easy to display the MyStackOfInts in a UITableView
+    // Item 0 is the first one pushed.
+    // Item count - 1 is the most recently pushed.
+    
+    func get(_ i: Int) -> Int {
+        guard (0 ..< count).contains(i) else {
+            fatalError("can't get item \(i) of \(count)");
+        }
+        return items[i];
     }
 }
 */
@@ -92,16 +98,6 @@ struct MyStack {
         return items.count;
     }
     
-    // Item 0 is the first one pushed.
-    // Item count - 1 is the most recently pushed.
-    
-    func get(_ i: Int) -> Element {
-        guard (0 ..< count).contains(i) else {
-            fatalError("can't get item \(i) of \(count)");
-        }
-        return items[i];
-    }
-    
     // MARK: - Mutating methods
     
     mutating func push(_ item: Element) {
@@ -113,6 +109,18 @@ struct MyStack {
             fatalError("can't take blood from a stone");
         }
         return items.removeLast();
+    }
+}
+
+extension MyStack {   //to make it easy to display the MyStack in a UITableView
+    // Item 0 is the first one pushed.
+    // Item count - 1 is the most recently pushed.
+    
+    func get(_ i: Int) -> Element {
+        guard (0 ..< count).contains(i) else {
+            fatalError("can't get item \(i) of \(count)");
+        }
+        return items[i];
     }
 }
 */
@@ -127,16 +135,6 @@ struct MyStack<Element> {
         return items.count;
     }
     
-    // Item 0 is the first one pushed.
-    // Item count - 1 is the most recently pushed.
-
-    func get(_ i: Int) -> Element {
-        guard (0 ..< count).contains(i) else {
-            fatalError("can't get item \(i) of \(count)");
-        }
-        return items[i];
-    }
-    
     // MARK: - Mutating methods
 
     mutating func push(_ item: Element) {
@@ -148,6 +146,18 @@ struct MyStack<Element> {
             fatalError("can't take blood from a stone");
         }
         return items.removeLast();
+    }
+}
+
+extension MyStack {   //to make it easy to display the MyStack in a UITableView
+    // Item 0 is the first one pushed.
+    // Item count - 1 is the most recently pushed.
+
+    func get(_ i: Int) -> Element {
+        guard (0 ..< count).contains(i) else {
+            fatalError("can't get item \(i) of \(count)");
+        }
+        return items[i];
     }
 }
 */

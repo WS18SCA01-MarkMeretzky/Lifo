@@ -10,7 +10,7 @@ import UIKit;
 
 class EmployeeTableViewController: UITableViewController {
     var employees: MyStackOfStrings = MyStackOfStrings();
-    //var employees: MyStackOfInts    = MyStackOfInts();
+    //var employees: MyStackOfInts    = MyStackOfInts();   //version 2
     //var employees: MyStack          = MyStack();
     //var employees: MyStack<String>  = MyStack<String>();
 
@@ -45,7 +45,7 @@ class EmployeeTableViewController: UITableViewController {
         let employeeNumber: Int = employees.count - indexPath.row;
 
         let employeeValue: String = employees.get(employeeNumber - 1);
-        //let employeeValue: Int = employees.get(employeeNumber - 1);
+        //let employeeValue: Int = employees.get(employeeNumber - 1);   //version 2
 
         cell.textLabel!.text = "\(employeeNumber). \(employeeValue)";
         return cell;
@@ -110,8 +110,8 @@ class EmployeeTableViewController: UITableViewController {
         let stringFromTextField: String = viewController.textField.text ?? "";
         
         let employeeValue: String = stringFromTextField;
-        //guard let employeeValue: Int = Int(stringFromTextField) else {
-        //    fatalError("could not convert string \"\(stringFromTextField)\" to Int);
+        //guard let employeeValue: Int = Int(stringFromTextField) else {   //version 2
+        //    fatalError("could not convert string \"\(stringFromTextField)\" to Int");
         //}
 
         employees.push(employeeValue);

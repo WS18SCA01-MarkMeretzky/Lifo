@@ -18,8 +18,6 @@ struct MyStackOfStrings {
         return items.count;
     }
     
-
-    
     // MARK: - Mutating methods
     
     mutating func push(_ item: String) {
